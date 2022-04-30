@@ -160,3 +160,12 @@ icone.forEach(oggettoSingolo => {
 
 // console.log(document.getElementsByClassName('container'));
 // console.log(document.querySelector('main .container'));
+
+
+document.getElementById('selezione').addEventListener('change', function() {
+	console.log(this.value);
+	// il valore ottenuto lo uso come filtro per filtrare tutto l'array.
+	// ottengo quindi un nuovo array filtrato.
+	// svuoto il container
+	// stampo il nuovo array filtrato
+})
