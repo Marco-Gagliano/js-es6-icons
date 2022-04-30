@@ -151,7 +151,7 @@ icone.forEach(oggettoSingolo => {
 	document.querySelector('main .container').innerHTML += 
 	`
 	<div class="box m-3 text-center">
-		<i class="${family} ${prefix}${name}"></i>
+		<i class="${family} ${prefix}${name}" style="color: ${color}"></i>
 		<p>${name}</p>
 	</div>
 	`
