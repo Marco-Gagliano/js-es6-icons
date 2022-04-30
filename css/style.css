@@ -9,3 +9,15 @@
 main .container {
   background-color: #DDDDDD;
 }
+
+main .box {
+  background-color: #29B1DD;
+  height: 100px;
+  width: 200px;
+}
+
+main i {
+  font-size: 35px;
+}
+
+
