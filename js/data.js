@@ -144,28 +144,69 @@ const icone = [
 	}
 ];
 
+// FOR EACH = Ripete un gruppo di istruzioni per ogni elemento di una raccolta.
+function stampaCard (arr){
 
-icone.forEach(oggettoSingolo => {
-	// console.log(element);)
-	const {name, prefix, type, family, color} = oggettoSingolo;
-	document.querySelector('main .container').innerHTML += 
-	`
-	<div class="box m-3 text-center">
+	// icone.forEach(oggettoSingolo => {    <==== "for each" scritto da me prima della modifica
+
+	// "for each" modificato creando una funzione all'interno per far stampare la card con l'aiuto di un compagno 
+	arr.forEach(oggettoSingolo => {
+
+		// console.log(element);)
+		const {name, prefix, type, family, color} = oggettoSingolo;
+		document.querySelector('main .container').innerHTML += 
+
+		`
+		<div class="box m-3 text-center">
 		<i class="${family} ${prefix}${name}" style="color: ${color}"></i>
 		<p>${name}</p>
-	</div>
-	`
-	console.log(name);
-});
+		</div>
+		`
+		// console.log(name);
+	});
+};
 
 // console.log(document.getElementsByClassName('container'));
 // console.log(document.querySelector('main .container'));
 
+stampaCard(icone);
+
 
 document.getElementById('selezione').addEventListener('change', function() {
-	console.log(this.value);
+
+	//PROCEDIMENTO CREATO CON STEFANO:
+
 	// il valore ottenuto lo uso come filtro per filtrare tutto l'array.
 	// ottengo quindi un nuovo array filtrato.
 	// svuoto il container
 	// stampo il nuovo array filtrato
-})
+
+	// N.B.: Righe 188, 194, 200: const creato e migliorato con l'aiuto di un compagno 
+	
+	if(this.value === 'animali') {
+		document.querySelector('main .container').innerHTML = ` `;
+		const animaliArray = icone.filter ((el) => el.type === "animal");
+		stampaCard(animaliArray);
+	}
+
+	else if(this.value === 'vegetali') {
+		document.querySelector('main .container').innerHTML = ` `;
+		const vegetaliArray = icone.filter ((el) => el.type === "vegetable");
+		stampaCard(vegetaliArray);
+	}
+
+	else if(this.value === 'utenti') {
+		document.querySelector('main .container').innerHTML = ` `;
+		const utentiArray = icone.filter ((el) => el.type === "user");
+		stampaCard(utentiArray);
+	}
+
+	else{
+		document.querySelector('main .container').innerHTML = ` `;
+		stampaCard(icone);
+	}
+	
+	//console.log(this.value);
+
+});
+
