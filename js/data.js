@@ -157,9 +157,9 @@ function stampaCard (arr){
 		document.querySelector('main .container').innerHTML += 
 
 		`
-		<div class="box m-3 text-center">
+		<div class="box m-4 text-center">
 		<i class="${family} ${prefix}${name}" style="color: ${color}"></i>
-		<p>${name}</p>
+		<p class="text-uppercase">${name}</p>
 		</div>
 		`
 		// console.log(name);
